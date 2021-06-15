@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="censusanalyser.CensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-15T10:40:44" hostname="Moonlight" time="0.274">
+  <properties/>
+  <testcase name="givenIndianCensusCSVFileReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.274"/>
+  <system-out><![CDATA[state='null'
+population=0
+areaInSqKm=0
+densityPerSqKm=0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
