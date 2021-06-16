@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="censusanalyser.CensusAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-15T10:40:44" hostname="Moonlight" time="0.274">
+<testsuite name="censusanalyser.CensusAnalyserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-06-16T11:39:37" hostname="Moonlight" time="0.518">
   <properties/>
-  <testcase name="givenIndianCensusCSVFileReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.274"/>
-  <system-out><![CDATA[state='null'
-population=0
-areaInSqKm=0
-densityPerSqKm=0
+  <testcase name="givenIndianCensusCSVFileReturnsCorrectRecords" classname="censusanalyser.CensusAnalyserTest" time="0.302"/>
+  <testcase name="givenIndiaCensusData_WithWrongDelimiter_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.032"/>
+  <testcase name="givenIndiaCensusData_WithWrongFileType_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.013"/>
+  <testcase name="givenIndianStateCodeCSV_ShouldReturnExactCount" classname="censusanalyser.CensusAnalyserTest" time="0.112"/>
+  <testcase name="givenIndiaCensusData_WithWrongHeader_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.054"/>
+  <testcase name="givenIndiaCensusData_WithWrongFile_ShouldThrowException" classname="censusanalyser.CensusAnalyserTest" time="0.001"/>
+  <system-out><![CDATA[total num of state code37
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
