@@ -11,6 +11,7 @@ public class CensusAnalyserTest {
     private static final String WRONG_CSV_FILE_PATH = "./src/main/resources/IndiaStateCensusData.csv";
     private static final String WRONG_CENSUS_FILE_EXTENSION = "D:\\intellijWorkSpace\\CensusAnalyser\\src\\test\\resources\\IndiaStateCensusData.sh";
     private static final String INDIA_CENSUS_CSV_FILE_WRONG_DELIMITER = "D:\\intellijWorkSpace\\CensusAnalyser\\src\\test\\resources\\WrongDelimiter.csv";
+    private static final String INDIA_CENSUS_CSV_FILE_WRONG_HEADER = "D:\\intellijWorkSpace\\CensusAnalyser\\src\\test\\resources\\WrongHeader.csv";
 
     @Description("Given Indian States Census CSV file, Check to ensure the number of record matches.")
     @Test
@@ -58,7 +59,20 @@ public class CensusAnalyserTest {
             exceptionRule.expect(CensusAnalyserException.class);
             censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_WRONG_DELIMITER);
         } catch (CensusAnalyserException e) {
-            Assert.assertEquals(CensusAnalyserException.ExceptionType.INVALID_HEADER_AND_DELIMITER.ordinal(), e.type);
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.INVALID_HEADER_AND_DELIMITER, e.type);
+        }
+    }
+
+    @Description("Given the State Census CSV File when correct but header incorrect return custom exception.")
+    @Test
+    public void givenIndiaCensusData_WithWrongHeader_ShouldThrowException() {
+        try {
+            CensusAnalyser censusAnalyser = new CensusAnalyser();
+            ExpectedException exceptionRule = ExpectedException.none();
+            exceptionRule.expect(CensusAnalyserException.class);
+            censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_WRONG_HEADER);
+        } catch (CensusAnalyserException e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.INVALID_HEADER_AND_DELIMITER, e.type);
         }
     }
 }
