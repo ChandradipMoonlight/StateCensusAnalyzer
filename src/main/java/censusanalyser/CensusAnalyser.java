@@ -27,6 +27,9 @@ public class CensusAnalyser {
         } catch (IllegalStateException e) {
             throw new CensusAnalyserException(e.getMessage(),
                                              CensusAnalyserException.ExceptionType.UNABLE_TO_PARSE);
+        } catch (RuntimeException e) {
+            throw new CensusAnalyserException("Invalid header or Delimiter",
+                                             CensusAnalyserException.ExceptionType.INVALID_HEADER_AND_DELIMITER);
         }
     }
 }
